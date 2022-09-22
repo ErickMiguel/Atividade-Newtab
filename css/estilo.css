@@ -1,24 +1,24 @@
+html {
+    height: 100%;
+    min-height: 100%;
+}
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
 
-@media (min-width: 1501px) and (max-width: 1920px) { 
-   header {
-        position: relative;
-        width: 1500px;
-        height: 80px;
-        left: 210px;
-        top: 0px;
-    
-        background: #E0E0E0;
-   }
-   section {
-        position: relative;
-        width: 1100px;
-        height: 755px;
-        margin-top: 30px;
-   }
+footer {
+    margin-top: auto;
 }
 
 /*Header*/
+
+header {
+    position: relative;
+    background: #E0E0E0;
+}
 
 .espacamento {
     margin-left: 450px;
@@ -76,6 +76,11 @@ h1.grupo {
 
 /*Frame info*/
 
+section {
+    margin-top: 3em;
+    margin-bottom: 22.9em;
+}
+
 .card {
     border: solid 1px #979797;
 }
@@ -90,4 +95,9 @@ h1.grupo {
 
 .semBorda {
     border: 0px ;
+}
+
+footer{
+    background: #333333;
+    padding: 10px 0px 0px 0px;
 }
