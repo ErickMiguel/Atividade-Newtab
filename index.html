@@ -5,137 +5,116 @@
  <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://kit.fontawesome.com/ba8b4db904.js" crossorigin="anonymous"></script>
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
 
  <title>Controle Financeiro</title>
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-expand-lg">
-        <div class="container">
-            <div class="agrupamento">
-                <a href="index.html" class="navbar-brand">
-                    <svg width="42" height="41" viewBox="0 0 42 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <nav class="header">
+            <div class="agrupamento"> <!--Logo+Texto-->
+                <a href="index.html">
+                    <svg  class="logo" width="42" height="41" viewBox="0 0 42 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M31.3043 32.8246C33.7056 32.8246 35.6522 30.8609 35.6522 28.4386C35.6522 26.0163 33.7056 24.0526 31.3043 24.0526C28.9031 24.0526 26.9565 26.0163 26.9565 28.4386C26.9565 30.8609 28.9031 32.8246 31.3043 32.8246ZM31.3043 32.8246C27.4624 32.8246 24.3478 35.9664 24.3478 39.8421H38.2609C38.2609 35.9664 35.1463 32.8246 31.3043 32.8246ZM15.6522 10.8947C15.6522 15.2549 12.1483 18.7895 7.82609 18.7895C3.50386 18.7895 0 15.2549 0 10.8947C0 6.53459 3.50386 3 7.82609 3C12.1483 3 15.6522 6.53459 15.6522 10.8947ZM0 24.0526H15.6522V39.8421H0V24.0526ZM31.3043 3L40 18.7895H22.6087L31.3043 3Z" stroke="#333333" stroke-width="2" stroke-linecap="square"/>
                     </svg>
                 </a>
-                <h1 class="grupo float-right">Controle Financeiro</h1>
+                <h1 class="textop">Controle Financeiro</h1>
+                
             </div>
-            <button class="navbar-toggler btn btn-light" data-toggle="collapse" data-target="#nav-principal">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-            <div class="espacamento">
-
+            <div class="navgacao"> <!--Navegação-->
+                <a class="hamburguer-button">☰</a>
+                <div class="botoes-cabecalho">
+                    <p class="Esc"><b>X</b></p>
+                    <a class=""href="">Limpar dados</a>
+                    <p class="linha"></p>
+                    <a class="ativo"href=""> Cadastro de transações</a>
+                  
+               </div>
             </div>
-            <div class="collapse navbar-collapse nav-deco" id="nav-principal">
-                <ul class="navbar-nav" id="navegacao">
-                    <li class="nav-item">
-                        <a href="" class="nav-link">Limpar dados</a>
-                    </li>
-                    <li class="divisor">
-                        │
-                    </li>
-                    <li role="separator" class="mh-header-primary svelte-1i2hclv"></li>
-                    <li class="nav-itedasm">
-                        <a href="" class="nav-link">Cadastro de Transições</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
     </nav>
 </header>
+<div>
+    <form class="Form FormBorder"> <!-- Fomurlário de Transação-->
+                <div class="FormTitle">
+                   <h3>
+                    Nova Transação
+                   </h3> 
+                </div>
 
-<section class="container">
-    <div class="row">
-        <div class="card col-lg-5">
-            <div class="card-body">
-                <h4 class="text-center">
-                   Nova Transação 
-                </h4>
-                <form class="form">
-                    <div class="ajuste">
-                    <p>Tipo de transação</p>
-                    <select class="custom-select">
-                        <option>Compra</option>
-                    </select>
+                <div class="FormTT responsivo1">
+                    <div class="FormTT2">
+                    <p class="PreInputText">Tipo de transação</p><br>
                     </div>
-                    <div class="ajuste">
-                        <p>Nome da mercadoria</p>
-                        <input class="form-control" placeholder="input">
-                    </div>
-                    <div class="ajuste">
-                        <p>Valor</p>
-                        <input class="form-control" placeholder="R$ 0,00">
-                    </div>
-                </form>
-                <p></p>
-                <div class="d-flex justify-content-space"><button class="btn btn-dark btn-sm btn-block">Adcionar Transação</button></div>
-            </div>
-        </div>
-        <div class="col-lg-7">
-            <table class="table">
-                <h4 class="text-center"> Extrato de transações</h4>
-                <thead>
-                    <tr>
-                        <th>
+                    
+                    <Select class="SelectVC InputText">
+                        <option> Selecione </option>
+                        <option >Venda</option>
+                        <option >Compra</option>
+                    </Select>
+                    
+                </div>
 
-                        </th>
-                        <th>
-                            Mercadoria
-                        </th>
-                        <th class="text-right">
-                            Valor
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td> + </td>
-                        <td> Lorem ipsum dolor sit amet 
-                            <br>consectetur </td>
-                        <td class="text-right"> R$ 12.999,99 </td>
-                    </tr>
-                    <tr>
-                        <td> - </td>
-                        <td> Quis nostrud exercitation </td>
-                        <td class="text-right"> R$ 99,99 </td>
-                    </tr>
-                    <tr>
-                        <td> + </td>
-                        <td> Lorem ipsum </td>
-                        <td class="text-right"> R$ 9,99 </td>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <th>Total</th>
-                        <td class="text-right"><b>R$ 12.909,99</b><br>
-                            [Lucro]
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                <br class="del">
+                <div class="FormTT responsivo2"> 
+                    <div class="FormTT2">
+                        <p class="PreInputText">Nome da mercadoria</p>
+                    </div>
+                      <input type="text" class="InputBox" name="Nome da mercadoria">
+                </div>
+
+                <br class="del">
+
+                <div class="FormTT responsivo3">
+                    <div class="FormTT2">
+                        <p class="PreInputText">Valor</p>
+                    </div>
+                      <input type="text" name="Valor" class="InputBox">
+                </div>
+                <input type="button" class="InputButton botao-responsivo" value="Adicionar transação">
+    </form>  
+
+        <div class="TableCustom"> <!--Tabela de Custos e Lucros-->
+            <div class="TableTitle Diff2">
+                <h3>
+                    Extrato de transações
+                </h3> 
+             </div>
+         <table>
+                <tr>
+                    <th></th>
+                    <th class="text-left">Mercadoria</th>
+                    <th class="text-right">Valor</th>
+                </tr>
+                <tr>
+                    <td>+</td>
+                    <td class="text-left">Lorem ipsum dolor sit amet <br>consectetur</td>
+                    <td class="text-right">R$ 12.999,99</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td class="text-left">Quis nostrud exercitation</td>
+                    <td class="text-right">R$ 99,99</td>
+                </tr>
+                <tr>
+                    <td>+</td>
+                    <td class="text-left">Lorem ipsum</td>
+                    <td class="text-right">R$ 9,99</td>
+                </tr>
+                <tr>
+                    <th style="
+                    padding-bottom: 1px;
+                    padding-top: 1px;
+                "></th>
+                </tr>
+                <tr>
+                    <th class="Diff"></th>
+                    <td class="text-left Diff"><b>Total</b></td>
+                    <td class="text-right Diff"><b>R$ 12.909,99</b><br>
+                    [LUCRO]</td>
+                </tr>
+         </table>
         </div>
-    </div>
-    
-</section>
-<footer>
-</footer>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
-    crossorigin="anonymous">
-</script>
- 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" 
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" 
-    crossorigin="anonymous">
-</script>
- 
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
-    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
-    crossorigin="anonymous">
-</script>
+</div>
+<footer></footer>
 </body>
 </html>
