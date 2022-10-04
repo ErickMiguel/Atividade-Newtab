@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap');
 
 html { 
         min-height: 100%;
@@ -15,17 +15,19 @@ body {
 header {
     min-width: 100%;
     height: auto;
+    display: flex;
+    justify-content: center;
+    background: #E0E0E0;
 }
 
 /*Parte completa do Header Logo&Texto + Navegação*/
 
 .header {
-    min-width: 100%;
+    max-width: 1500px;
     height: 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #E0E0E0;
 }
 
 .logo {
@@ -122,12 +124,12 @@ header {
 
 .FormTT {
     height: 57px;
-    width: 370.204833984375px;
+    width: 100%;
     border-radius: 0px;
 }
 .FormTT2 {
     height: 22.22222137451172px;
-    width: 370.204833984375px;
+    width: 100%;
 }
 
 .PreInputText {
@@ -284,13 +286,17 @@ footer {
 
  }
 
- @media (min-width: 769px) and (max-width: 1112px) { 
+ @media (min-width: 769px) and (max-width: 1111px) { 
     .TableCustom {
         position: relative;
         display: inline-grid;
-        padding-left: 20px;
         height: 281px;
-        width: 652px;
+        width: 100%;
+        padding: 0px;
+        padding-bottom: 50px;
+    }
+    table {
+        margin: 20px;
     }
     .Form {
         margin-top: 30px;
@@ -339,6 +345,9 @@ footer {
     background: #333333;
     z-index: 1;
     }
+    .agrupamento {
+        width: 100%;
+    }
     .hamburguer-button{
         position: absolute;
         left: 95%;
@@ -377,19 +386,22 @@ footer {
 
     .Form {
         margin-top: 30px;
-        width: 680px;
+        width: 95%;
         height: 189px;
-        margin-left: 0px;
+        display: flex;
+        justify-content: center;
+        margin-left: 20px;
+        padding-right: 20px;
     }
     .FormBorder{
         border: 1px solid #979797;
         border-radius: 4px;
-        margin-left: 20px;
-        margin-right: 20px;
         box-sizing: border-box;
     }
 
     .FormTitle {
+        position: relative;
+        top: 30%;
         display: inline;
         width: 100%;
         justify-content: center;
@@ -402,36 +414,43 @@ footer {
     }
 
     .responsivo1 {
-        position: absolute;
-        width: 150px;
-        height: 57px;
-        top: 165px;
-        left: 20px;
-        right: 0;
+        position: relative;
+        width: 23%;
+        left: 0%;
+        right: 76.65%;
+        top: 32.28%;
+        bottom: 37.57%;
     }
     .responsivo2 {
-        position: absolute;
-        width: 348px;
-        height: 57px;
-        top: 165px;
-        left: 190px;
-        right: 0;
+        position: relative;
+        width: 54%;
+        left: 24.1%;
+        right: 26.1%;
+        bottom: 6.7%;
     }
     .responsivo3 {
-        position: absolute;
-        width: 150px;
-        height: 57px;
-        top: 165px;
-        left: 530px;
-        right: 0px;
+        position: relative;
+        width: 23%;
+        left: 76.65%;
+        bottom: 46.62%;
     }
     .botao-responsivo {
-        position: absolute;
-        width: 200px;
-        height: 33px;
-        top: 235px;
-        left: 463px;
-        right: 0;
+        position: relative;
+        width: 28%;
+        height: 32px;
+        left: 70%;
+        right: 0px;
+        bottom: 45%;
+    }
+    .TableCustom {
+        position: relative;
+        display: inline-grid;
+        height: 281px;
+        width: 100%;
+        padding: 0px;
+    }
+    table {
+        margin: 20px;
     }
     
  }
@@ -441,7 +460,7 @@ footer {
         position: absolute;
         top: 0px;
         display: inline;
-        width: 351px;
+        width: 89%;
         height: 1000px;
         opacity: 100;
         right: 0px;
@@ -483,11 +502,9 @@ footer {
             background-color: #C4C4C4;
         }
         .agrupamento {
-            width: 411px;
-            height: 43px;
-            margin-top: 20px;
-            margin-left: 20px;
-            margin-bottom: 20px;
+            width: 100%;
+            margin: 0px;
+            display: flex;
         }
 
         .textop {
@@ -496,15 +513,13 @@ footer {
         
         .Form {
             margin-top: 30px;
-            width: 371px;
+            width: 100%;
             height: 40%;
             margin-left: 0px;
         }
         .FormBorder{
             border: 0px solid #979797;
             border-radius: 4px;
-            margin-left: 20px;
-            margin-right: 20px;
             box-sizing: border-box;
         }
     
@@ -521,11 +536,14 @@ footer {
         }
         .TableCustom {
             position: relative;
-            display: inline-grid;
-            padding-left: 20px;
-            height: 281px;
-            width: 371px;
-            margin-bottom: 70px;
+            display: flex;
+            flex-direction: column;
+            padding-left: 0px;
+            height: 60%;
+            width: 100%;
+        }
+        table {
+            margin: 20px;
         }
         .Diff2 {
                 margin-top: 28px;
