@@ -5,6 +5,7 @@
  <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://kit.fontawesome.com/ba8b4db904.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
 
  <title>Controle Financeiro</title>
@@ -46,10 +47,10 @@
                     <p class="PreInputText">Tipo de transação</p><br>
                     </div>
                     
-                    <Select class="SelectVC InputText">
-                        <option> Selecione </option>
-                        <option >Venda</option>
-                        <option >Compra</option>
+                    <Select id="tipo" class="SelectVC InputText">
+                        <option value=""> Selecione </option>
+                        <option value="venda">Venda</option>
+                        <option value="compra">Compra</option>
                     </Select>
                     
                 </div>
@@ -59,7 +60,7 @@
                     <div class="FormTT2">
                         <p class="PreInputText">Nome da mercadoria</p>
                     </div>
-                      <input type="text" class="InputBox InputText" value="Input" name="Nome da mercadoria">
+                      <input id="nome" type="text" class="InputBox InputText" value="Input" name="Nome da mercadoria">
                 </div>
 
                 <br class="del">
@@ -68,9 +69,9 @@
                     <div class="FormTT2">
                         <p class="PreInputText">Valor</p>
                     </div>
-                      <input type="text" name="Valor" class="InputBox InputText" value="R$ 00,0">
+                      <input id="valor" type="text" name="Valor" class="InputBox InputText" value="R$ 00,0">
                 </div>
-                <input type="button" class="InputButton botao-responsivo" value="Adicionar transação">
+                <input onclick="cadastrarTransacao()" id="botao" type="button" class="InputButton botao-responsivo" value="Adicionar transação">
     </form>  
 
         <div class="TableCustom"> <!--Tabela de Custos e Lucros-->
