@@ -4,7 +4,34 @@ class Transacao {
             this.nome = nome
             this.valor = valor
         }
+
+        validarDados()
 }
+
+class Bd {
+    constructor() {
+		let id = localStorage.getItem('id')
+
+		if(id === null) {
+			localStorage.setItem('id', 0)
+		} 
+	}
+
+	getProximoId() {
+		let proximoId = localStorage.getItem('id')
+		return parseInt(proximoId) + 1
+	}
+
+	gravar(d) {
+		let id = this.getProximoId()
+
+		localStorage.setItem(id, JSON.stringify(d))
+
+		localStorage.setItem('id', id)
+	}
+}
+
+let bd = new Bd()
 
 function cadastrarTransacao() {
     let tipo = document.getElementById('tipo')
@@ -17,5 +44,5 @@ function cadastrarTransacao() {
         valor.value
     )
     
-    console.log(Transacao)
+    bd.gravar(transacao)
 }
