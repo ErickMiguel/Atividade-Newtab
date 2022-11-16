@@ -10,7 +10,7 @@
 
  <title>Controle Financeiro</title>
 </head>
-<body>
+<body onload="carregarLista()" >
 <header>
     <nav class="header">
             <div class="agrupamento"> <!--Logo+Texto-->
@@ -26,7 +26,7 @@
                 <a class="hamburguer-button">☰</a>
                 <div class="botoes-cabecalho">
                     <p class="Esc"><b>X</b></p>
-                    <a class=""href="">Limpar dados</a>
+                    <a id="limparDados" onclick="limparDados()" href="">Limpar dados</a>
                     <p class="linha"></p>
                     <a class="ativo"href=""> Cadastro de transações</a>
                   
@@ -49,8 +49,8 @@
                     
                     <Select id="tipo" class="SelectVC InputText">
                         <option value=""> Selecione </option>
-                        <option value="venda">Venda</option>
-                        <option value="compra">Compra</option>
+                        <option value="+">Venda</option>
+                        <option value="-">Compra</option>
                     </Select>
                     
                 </div>
@@ -60,7 +60,7 @@
                     <div class="FormTT2">
                         <p class="PreInputText">Nome da mercadoria</p>
                     </div>
-                      <input id="nome" type="text" class="InputBox InputText" value="Input" name="Nome da mercadoria">
+                      <input id="nome" type="text" class="InputBox InputText" value="" name="Nome da mercadoria" placeholder="Mercadoria">
                 </div>
 
                 <br class="del">
@@ -69,9 +69,9 @@
                     <div class="FormTT2">
                         <p class="PreInputText">Valor</p>
                     </div>
-                      <input id="valor" type="text" name="Valor" class="InputBox InputText" value="R$ 00,0">
+                      <input id="valor" type="number" name="Valor" class="InputBox InputText" value="" placeholder="R$ 00,00">
                 </div>
-                <input onclick="cadastrarTransacao()" id="botao" type="button" class="InputButton botao-responsivo" value="Adicionar transação">
+                <input onclick="cadastrarTransacao(), window.location.reload()" id="botao" type="button" class="InputButton botao-responsivo" value="Adicionar transação">
     </form>  
 
         <div class="TableCustom"> <!--Tabela de Custos e Lucros-->
@@ -81,38 +81,15 @@
                 </h3> 
              </div>
          <table>
-                <tr>
-                    <th></th>
-                    <th class="text-left">Mercadoria</th>
-                    <th class="text-right">Valor</th>
-                </tr>
-                <tr>
-                    <td>+</td>
-                    <td class="text-left">Lorem ipsum dolor sit amet <br>consectetur</td>
-                    <td class="text-right">R$ 12.999,99</td>
-                </tr>
-                <tr>
-                    <td>-</td>
-                    <td class="text-left">Quis nostrud exercitation</td>
-                    <td class="text-right">R$ 99,99</td>
-                </tr>
-                <tr>
-                    <td>+</td>
-                    <td class="text-left">Lorem ipsum</td>
-                    <td class="text-right">R$ 9,99</td>
-                </tr>
-                <tr>
-                    <th style="
-                    padding-bottom: 1px;
-                    padding-top: 1px;
-                "></th>
-                </tr>
-                <tr>
-                    <th class="Diff"></th>
-                    <td class="text-left Diff"><b>Total</b></td>
-                    <td class="text-right Diff"><b>R$ 12.909,99</b><br>
-                    [LUCRO]</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="text-left">Mercadoria</th>
+                        <th class="text-left">Valor</th>
+                    </tr>
+                </thead>
+                <tbody id="listaTransacao">
+                </tbody>
          </table>
         </div>
 </div>

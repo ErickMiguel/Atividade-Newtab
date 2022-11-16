@@ -1,14 +1,23 @@
 class Transacao {
+    //criação e validação dos ID's
         constructor(tipo, nome, valor) {
             this.tipo = tipo
             this.nome = nome
             this.valor = valor
         }
 
-        validarDados()
+        validarDados(){
+            for (let i in this) {
+                if(this[i] == undefined || this[i] == null || this[i] == ""){
+                    return false
+                }
+            }
+            return true
+        }
 }
 
 class Bd {
+    //constructor para o registro dos ID's
     constructor() {
 		let id = localStorage.getItem('id')
 
@@ -29,11 +38,30 @@ class Bd {
 
 		localStorage.setItem('id', id)
 	}
+    recuperarRegistros() {
+
+        //array de despesa
+        let despesas = Array()
+
+        let id = localStorage.getItem('id')
+        //recuperar todas as trasações e transformar ela em objeto.
+        for(let i = 1; i <= id; i++){
+            let despesa = JSON.parse(localStorage.getItem(i))
+            despesas.push(despesa)
+            //Caso a despesa seja apagada, vire null pulamos.
+            if(despesa === null){
+                continue
+            }
+        }
+
+        return despesas
+    }
 }
 
 let bd = new Bd()
 
 function cadastrarTransacao() {
+    //cadastro e validação dos id's
     let tipo = document.getElementById('tipo')
     let nome =document.getElementById('nome')
     let valor =document.getElementById('valor')
@@ -44,5 +72,39 @@ function cadastrarTransacao() {
         valor.value
     )
     
-    bd.gravar(transacao)
+    if (transacao.validarDados()){
+        //Sucesso
+        bd.gravar(transacao)
+        alert ('Parabéns, sua transação foi registrada!')
+    } else {
+        //Erro
+        alert ('Dados invalidos, preencha todos os campos')
+    }
+}
+
+function carregarLista() {
+    //Carregar a lista no site
+    let despesas = Array()
+
+    despesas = bd.recuperarRegistros()
+    var listaTransacao = document.getElementById('listaTransacao')
+    /*  <tr>
+            <td>+</td>
+            <td class="text-left">Lorem ipsum dolor sit amet <br>consectetur</td>
+            <td class="text-right">R$ 12.999,99</td>
+        </tr>*/
+    despesas.forEach(function(d){
+       let linha = listaTransacao.insertRow()
+        linha.insertCell(0).innerHTML = d.tipo
+        linha.insertCell(1).innerHTML = d.nome
+        linha.insertCell(2).innerHTML = d.valor
+    })
+}
+
+
+function limparDados(){
+        if (confirm("Você tem certeza que quer Limpar seus dados?")){
+            localStorage.clear()} else {
+                return false
+            }
 }
