@@ -224,6 +224,9 @@ table {
     border-bottom: 0px;
 }
 
+#calcTotal {
+    text-align: left;
+}
 
 .text-right {
     text-align: right;

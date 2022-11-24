@@ -84,7 +84,7 @@ function cadastrarTransacao() {
 
 function carregarLista() {
     //Carregar a lista no site
-    let despesas = Array()
+    let despesas = Object()
 
     despesas = bd.recuperarRegistros()
     var listaTransacao = document.getElementById('listaTransacao')
@@ -92,15 +92,22 @@ function carregarLista() {
             <td>+</td>
             <td class="text-left">Lorem ipsum dolor sit amet <br>consectetur</td>
             <td class="text-right">R$ 12.999,99</td>
-        </tr>*/
+    </tr>*/
     despesas.forEach(function(d){
-       let linha = listaTransacao.insertRow()
+        let linha = listaTransacao.insertRow()
         linha.insertCell(0).innerHTML = d.tipo
         linha.insertCell(1).innerHTML = d.nome
-        linha.insertCell(2).innerHTML = d.valor
+        linha.insertCell(2).innerHTML = "R$ " + d.valor
     })
-}
-
+    var total = 0
+    for (transacao of despesas) {
+        total += transacao.valor * (transacao.tipo == '-' ? -1 : 1)
+    } 
+    if ( total >= 0) {
+        calcTotal.insertCell(2).innerHTML = "<b> R$ " + total + "</b> </br> [Lucro]"
+    } else {
+       return calcTotal.insertCell(2).innerHTML = "<b> R$ " + total + "</b> </br> [Prejuízo]"
+    }}
 
 function limparDados(){
         if (confirm("Você tem certeza que quer Limpar seus dados?")){
@@ -108,3 +115,4 @@ function limparDados(){
                 return false
             }
 }
+
