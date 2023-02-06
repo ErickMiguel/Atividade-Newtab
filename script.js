@@ -1,3 +1,4 @@
+
 class Transacao {
     //criação e validação dos ID's
         constructor(tipo, nome, valor) {
@@ -63,8 +64,8 @@ let bd = new Bd()
 function cadastrarTransacao() {
     //cadastro e validação dos id's
     let tipo = document.getElementById('tipo')
-    let nome =document.getElementById('nome')
-    let valor =document.getElementById('valor')
+    let nome = document.getElementById('nome')
+    let valor = document.getElementById('valor')
 
     let transacao = new Transacao(
         tipo.value, 
@@ -75,7 +76,6 @@ function cadastrarTransacao() {
     if (transacao.validarDados()){
         //Sucesso
         bd.gravar(transacao)
-        alert ('Parabéns, sua transação foi registrada!')
     } else {
         //Erro
         alert ('Dados invalidos, preencha todos os campos')
@@ -103,10 +103,12 @@ function carregarLista() {
     for (transacao of despesas) {
         total += transacao.valor * (transacao.tipo == '-' ? -1 : 1)
     } 
-    if ( total >= 0) {
-        calcTotal.insertCell(2).innerHTML = "<b> R$ " + total + "</b> </br> [Lucro]"
-    } else {
-       return calcTotal.insertCell(2).innerHTML = "<b> R$ " + total + "</b> </br> [Prejuízo]"
+    if ( total > 0) {
+        calcTotal.insertCell(2).innerHTML = "<b> R$ " + total.toLocaleString('pt-BR', {currency: 'BRL', minimumFractionDigits: 2}) + "</b> </br> [Lucro]"
+    } if ( total < 0){
+       return calcTotal.insertCell(2).innerHTML = "<b> R$ " + total.toLocaleString('pt-BR', {currency: 'BRL', minimumFractionDigits: 2}) + "</b> </br> [Prejuízo]"
+    } if ( total > 0 < 1 ) {
+        return calcTotal.insertCell(2).innerHTML = "<b> R$ " + total.toLocaleString('pt-BR', {currency: 'BRL', minimumFractionDigits: 2}) + "</b> </br> [Estável]"
     }}
 
 function limparDados(){
