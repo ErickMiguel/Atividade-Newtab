@@ -23,9 +23,9 @@
                 
             </div>
             <div class="navgacao"> <!--Navegação-->
-                <a class="hamburguer-button">☰</a>
-                <div class="botoes-cabecalho">
-                    <p class="Esc"><b>X</b></p>
+                <a id="menu" onclick="document.getElementById('cabecalho').style.display = 'inline'" class="hamburguer-button">☰</a>
+                <div id="cabecalho" class="botoes-cabecalho">
+                    <p id="esc" onclick="document.getElementById('cabecalho').style.display = 'none'" class="Esc"><b>X</b></p>
                     <a id="limparDados" onclick="limparDados()" href="">Limpar dados</a>
                     <p class="linha"></p>
                     <a class="ativo"href=""> Cadastro de transações</a>
