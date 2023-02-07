@@ -15,7 +15,6 @@ body {
 header {
     min-width: 100%;
     height: auto;
-    display: flex;
     justify-content: center;
     background: #E0E0E0;
 }
