@@ -10,7 +10,7 @@
 
  <title>Controle Financeiro</title>
 </head>
-<body onload="carregarLista()" >
+<body onload="carregarLista(), valorCheck() " >
 <header>
     <nav class="header">
             <div class="agrupamento"> <!--Logo+Texto-->
@@ -69,9 +69,9 @@
                     <div class="FormTT2">
                         <p class="PreInputText">Valor</p>
                     </div>
-                      <input id="valor" type="number" name="Valor" class="InputBox InputText" value="" placeholder="R$ 00,00">
+                      <input id="valor" type="text" name="Valor" class="InputBox InputText" value="" placeholder="R$ 00,00">
                 </div>
-                <input onclick="cadastrarTransacao(), window.location.reload()" id="botao" type="button" class="InputButton botao-responsivo" value="Adicionar transação">
+                <input onclick="cadastrarTransacao()" id="botao" type="submit" class="InputButton botao-responsivo" value="Adicionar transação">
     </form>  
 
         <div class="TableCustom"> <!--Tabela de Custos e Lucros-->
