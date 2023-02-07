@@ -78,7 +78,7 @@ function cadastrarTransacao() {
         bd.gravar(transacao)
     } else {
         //Erro
-        alert ('Dados invalidos, preencha todos os campos')
+        avisoErro()
     }
 }
 
@@ -117,4 +117,34 @@ function limparDados(){
                 return false
             }
 }
+
+function avisoErro(){
+    if (nome == null || nome == undefined || nome == "" ){
+        alert("Nome Inválido")
+    }
+    if (tipo == null || tipo == undefined || tipo == "" ){
+        alert("Tipo Inválido")
+    }
+    if (valor == null || valor == undefined || valor == "" ){
+        alert("Nome Inválido")
+    }
+}
+
+function valorCheck () {
+    var numbox = document.getElementById('valor');
+    numbox.addEventListener( 'keypress', numCheck, false );
+}
+
+function numCheck(evt) {
+    var charCode = evt.charCode;
+    if (charCode != 0) {
+        if (charCode < 48 && charCode === 46 || charCode > 57 ) {
+            evt.preventDefault();
+            alert(
+                "Apenas números e vírgulas por favor!"
+            );
+        }
+    }
+}
+
 
