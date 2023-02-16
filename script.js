@@ -138,10 +138,10 @@ function valorCheck () {
 function numCheck(evt) {
     var charCode = evt.charCode;
     if (charCode != 0) {
-        if (charCode < 48 && charCode === 46 || charCode > 57 ) {
+        if (charCode < 48  || charCode > 57 ) {
             evt.preventDefault();
             alert(
-                "Apenas números e vírgulas por favor!"
+                "Apenas números!"
             );
         }
     }
