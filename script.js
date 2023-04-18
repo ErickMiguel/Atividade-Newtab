@@ -97,12 +97,12 @@ function carregarLista() {
         let linha = listaTransacao.insertRow()
         linha.insertCell(0).innerHTML = d.tipo
         linha.insertCell(1).innerHTML = d.nome
-        linha.insertCell(2).innerHTML = "R$ " + d.valor
+        linha.insertCell(2).innerHTML = "R$ " + parseFloat(d.valor).toLocaleString('pt-BR', { minimumFractionDigits: 2 } )
     })
     var total = 0
     for (transacao of despesas) {
         total += transacao.valor * (transacao.tipo == '-' ? -1 : 1)
-    } 
+    }
     if ( total > 0) {
         calcTotal.insertCell(2).innerHTML = "<b> R$ " + total.toLocaleString('pt-BR', {currency: 'BRL', minimumFractionDigits: 2}) + "</b> </br> [Lucro]"
     } if ( total < 0){
@@ -140,9 +140,7 @@ function numCheck(evt) {
     if (charCode != 0) {
         if (charCode < 48  || charCode > 57 ) {
             evt.preventDefault();
-            alert(
-                "Apenas números!"
-            );
+            return
         }
     }
 }
